@@ -7,24 +7,24 @@
 * @content: line content
 * Return: no return
 */
-int mty_execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
+int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t opst[] = {
-				{"push", mty_f_push}, {"pall", mty_f_pall}, {"pint", mty_f_pint},
-				{"pop", mty_f_pop},
-				{"swap", mty_f_swap},
-				{"add", mty_f_add},
-				{"nop", mty_f_nop},
-				{"sub", mty_f_sub},
-				{"div", mty_f_div},
-				{"mul", mty_f_mul},
-				{"mod", mty_f_mod},
-				{"pchar", mty_f_pchar},
-				{"pstr", mty_f_pstr},
-				{"rotl", mty_f_rotl},
-				{"rotr", mty_f_rotr},
-				{"queue", mty_f_queue},
-				{"stack", mty_f_stack},
+				{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
+				{"pop", f_pop},
+				{"swap", f_swap},
+				{"add", f_add},
+				{"nop", f_nop},
+				{"sub", f_sub},
+				{"div", f_div},
+				{"mul", f_mul},
+				{"mod", f_mod},
+				{"pchar", f_pchar},
+				{"pstr", f_pstr},
+				{"rotl", f_rotl},
+				{"rotr", f_rotr},
+				{"queue", f_queue},
+				{"stack", f_stack},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
@@ -46,7 +46,7 @@ int mty_execute(char *content, stack_t **stack, unsigned int counter, FILE *file
 	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
 		fclose(file);
 		free(content);
-		mty_free_stack(*stack);
+		free_stack(*stack);
 		exit(EXIT_FAILURE); }
 	return (1);
 }

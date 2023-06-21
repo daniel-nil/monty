@@ -6,7 +6,7 @@
  * @counter: line_number
  * Return: no return
 */
-void mty_f_pstr(stack_t **head, unsigned int counter)
+void f_pstr(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	(void)counter;

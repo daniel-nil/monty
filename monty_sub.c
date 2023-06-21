@@ -5,7 +5,7 @@
   *@counter: line_number
   *Return: no return
  */
-void mty_f_sub(stack_t **head, unsigned int counter)
+void f_sub(stack_t **head, unsigned int counter)
 {
 	stack_t *aux;
 	int sus, nodes;
@@ -18,7 +18,7 @@ void mty_f_sub(stack_t **head, unsigned int counter)
 		fprintf(stderr, "L%d: can't sub, stack too short\n", counter);
 		fclose(bus.file);
 		free(bus.content);
-		mty_free_stack(*head);
+		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
 	aux = *head;

@@ -5,7 +5,7 @@
  * @counter: line_number
  * Return: no return
 */
-void mty_f_queue(stack_t **head, unsigned int counter)
+void f_queue(stack_t **head, unsigned int counter)
 {
 	(void)head;
 	(void)counter;
@@ -18,7 +18,7 @@ void mty_f_queue(stack_t **head, unsigned int counter)
  * @head: head of the stack
  * Return: no return
 */
-void mty_addqueue(stack_t **head, int n)
+void addqueue(stack_t **head, int n)
 {
 	stack_t *new_node, *aux;
 
